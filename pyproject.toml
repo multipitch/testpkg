@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "testpkg"
+dynamic = ["version"]
+authors = [
+  { name="Sean Tully", email="sean@seantully.ie" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+devel = [
+  "bandit[toml]",
+  "black",
+  "flake8",
+  "flake8-bugbear",
+  "flake8-pyproject",
+  "isort",
+  "mypy",
+  "pylint",
+  "pytest",
+]
+
+[project.scripts]
+hello = "testpkg:main.hello"
+
+[tool.setuptools_scm]
+# Intentionally blank.
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint.format]
+max-line-length = "88"
+
+[tool.mypy]
+strict = true
+
+[tool.flake8]
+exclude = [".venv"]
+max-line-length = 88
+extend-ignore = ["E203"]
