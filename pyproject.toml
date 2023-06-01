@@ -30,6 +30,7 @@ devel = [
   "flake8-pyproject",
   "isort",
   "mypy",
+  "pre-commit",
   "pylint",
   "pytest",
 ]

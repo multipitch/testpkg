@@ -3,10 +3,8 @@ A basic project layout.
 
 ## TODO
 - Basic testing, coverage
-- Testing with Nox
-- Pre-commit
-- Building with pipelines
-- Dev vs Main branches
+- Testing against multiple python versions with Nox
+- Building/publishing with pipelines
+- Dev vs Main branches - automatic building and tagging on merge with main?
 - Documentation
 - Documentation hosting
-- Dependencies
