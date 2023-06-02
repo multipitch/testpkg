@@ -2,7 +2,9 @@
 *.egg-info
 *.py[cod]
 .mypy_cache/
+.nox/
+.pytest_cache/
 .venv/
-.vscode/
 __pycache__/
+build/
 dist/

@@ -1,0 +1,28 @@
+{
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "python.linting.banditEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "[python]": {
+        "editor.codeActionsOnSave": {"source.organizeImports": true},
+        "editor.formatOnSave": true,
+        "editor.rulers": [
+            72,
+            79,
+            80,
+            88,
+        ]
+    },
+    "python.linting.banditArgs": [
+        "-c",
+        "pyproject.toml"
+    ],
+    "python.linting.mypyArgs": [
+        "--config-file",
+        "pyproject.toml"
+    ],
+    "python.linting.ignorePatterns": [ "tests/**/*.py" ]
+}
