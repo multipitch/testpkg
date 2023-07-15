@@ -1,6 +1,7 @@
 *$py.class
 *.egg-info
 *.py[cod]
+.coverage
 .mypy_cache/
 .nox/
 .pytest_cache/
