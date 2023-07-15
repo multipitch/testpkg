@@ -4,7 +4,11 @@ main.py
 from dataclasses import dataclass
 from importlib.metadata import PackageNotFoundError, version
 
+import numpy as np
+
 PACKAGE_NAME = "testpkg"
+
+INF = np.Inf
 
 
 def square(number: float) -> float:

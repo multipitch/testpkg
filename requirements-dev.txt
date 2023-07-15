@@ -71,6 +71,8 @@ nodeenv==1.8.0
     # via pre-commit
 nox==2023.4.22
     # via testpkg (pyproject.toml)
+numpy==1.25.1
+    # via testpkg (pyproject.toml)
 packaging==23.1
     # via
     #   black

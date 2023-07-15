@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61", "setuptools_scm[toml]>=6.2"]
+requires = ["setuptools>=68", "setuptools_scm>=7.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -20,6 +20,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Typing :: Typed",
 ]
+dependencies = ["numpy"]
 
 [project.optional-dependencies]
 devel = [
@@ -51,7 +52,7 @@ max-line-length = "88"
 
 [tool.mypy]
 strict = true
-exclude = ["tests", "build", ".venv"]
+exclude = ["build", ".venv"]
 
 [tool.flake8]
 exclude = [".venv"]
