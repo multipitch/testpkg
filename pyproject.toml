@@ -3,25 +3,35 @@ requires = ["setuptools>=68", "setuptools_scm>=7.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "testpkg"
+name = "testpkg_multipitch"
 dynamic = ["version"]
 authors = [
-  { name="Sean Tully", email="sean@seantully.ie" },
+  { name="multipitch", email="14188124+multipitch@users.noreply.github.com" },
 ]
 description = "A small example package"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Typing :: Typed",
 ]
-dependencies = ["numpy"]
+# For end-user dependencies, either set a minimum version, or allow any
+# version; it's not good practise to pin these.
+dependencies = ["numpy>=1.24.0"]
 
+# For development dependencies, versions can be pinned by running
+# `pip-compile --extra=devel --output-file=requirements-dev.txt`.
+# To install pinned versions, do `pip install -r requirements-dev.txt`.
+# To install any version, do `pip install .[devel]`.
+# Pinning can help differentiate between bugs in this code and
+# bugs due to changes in external packages.
 [project.optional-dependencies]
 devel = [
   "bandit[toml]",
@@ -32,7 +42,6 @@ devel = [
   "isort",
   "mypy",
   "nox",
-  "pip-tools",
   "pre-commit",
   "pylint",
   "pytest",
