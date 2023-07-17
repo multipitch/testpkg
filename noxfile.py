@@ -10,7 +10,7 @@ MAIN_VERSION = "3.11"
 
 @nox.session(python=MAIN_VERSION)
 def lint(session: nox.Session) -> None:
-    """Run tests."""
+    """Run pre-commit."""
     session.install("-r", "requirements-dev.txt")
     session.run("pre-commit", "run", "--all-files")
 
@@ -25,6 +25,15 @@ def test(session: nox.Session) -> None:
 
 @nox.session(python=MAIN_VERSION)
 def build(session: nox.Session) -> None:
-    """Run tests."""
+    """Run build."""
     session.install("build")
     session.run("python", "-m", "build", "--wheel")
+
+
+@nox.session(python=MAIN_VERSION)
+def publish(session: nox.Session) -> None:
+    """Run twine."""
+    session.install("twine")
+    session.run(
+        "twine", "upload", "--repository", "testpypi", "--skip-existing", "dist/*"
+    )
