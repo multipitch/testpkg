@@ -32,9 +32,13 @@ The other versions are just used fortesting purposes.
   $ git tag -a v1.2.3 -m "version 1.2.3"
   $ git push origin v1.2.3
   ```
-
 ## Building
 - Run `nox -s build` to build the package.
+
+## Publishing
+- Run `nox -s publish` to publish the package to the pypi testing repo.
+- You can create a .pypirc file in ~ to store login credentials.
+- Do not store credentials in this repo.
 
 
 ## TODO
